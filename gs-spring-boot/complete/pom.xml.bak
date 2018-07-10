@@ -117,8 +117,8 @@
         <repository>
             <id>nexus_release</id>
             <name>nexus_release</name>
-<!--             <url>http://192.168.56.101:8081/nexus/content/repositories/r_release //--> 
-		<url>http://172.17.0.5:8081/nexus/content/repositories/repository2/</url>
+            <url>http://192.168.56.101:8081/nexus/content/repositories/r_release
+            </url>
             <!-- <releases>
                 <enabled>true</enabled>
             </releases>
@@ -130,7 +130,7 @@
         <snapshotRepository>
             <id>nexus_snap</id>
             <name>nexus_snap</name>
-            <url>http://172.17.0.5:8081/nexus/content/repositories/repository1/
+            <url>http://192.168.56.101:8081/nexus/content/repositories/r_snap
             </url>
 <!--            <releases>
                 <enabled>false</enabled>
