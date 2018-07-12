@@ -24,13 +24,13 @@ private WebDriver driver;
        DesiredCapabilities capability = DesiredCapabilities.chrome();
        capability.setBrowserName("chrome");
        capability.setPlatform(Platform.LINUX);
-       driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capability);
+       driver = new RemoteWebDriver(new URL("http://172.18.0.2:4444/wd/hub"), capability);
       }
          @Test
          public void exampleTestw() {
          System.out.println("####### Starting the selenium test #######");
-         driver.get("http://192.168.99.1:8080");
-         Assert.assertTrue("Greetings from Spring Boot!".equals(driver.findElement(By.tagName("body")).getText() ) ,"################################## Error !!! ##################################### ");
+         driver.get("http://172.18.0.2:4444");
+         Assert.assertFalse("Greetings from Spring Boot!".equals(driver.findElement(By.tagName("body")).getText() ) ,"################################## Error !!! ##################################### ");
          System.out.println("####### Test result: OK #######");
 
             
