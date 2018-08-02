@@ -25,7 +25,7 @@ node {
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package -f complete"
         } else {
-            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package -f 'complete/complete/complete/'/)
+            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package -f complete/)
         }
     }
     stage('Results') {
