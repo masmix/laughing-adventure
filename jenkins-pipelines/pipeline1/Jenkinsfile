@@ -4,6 +4,7 @@ node {
         // Get some code from a GitHub repository
         //git 'https://github.com/jglick/simple-maven-project-with-tests.git'
         //git 'git@172.17.0.4:/git-server/repos/myrepo.git'
+        dir('complete') {
         checkout([$class: 'GitSCM',
                   branches: [[name: '*/master']],
                   doGenerateSubmoduleConfigurations: false,
@@ -11,6 +12,7 @@ node {
                                 relativeTargetDir: 'complete']],
                   submoduleCfg: [],
                   userRemoteConfigs: [[url: 'git@172.17.0.4:/git-server/repos/myrepo.git']]])
+        }
 
         // Get the Maven tool.
         // ** NOTE: This 'M3' Maven tool must be configured
