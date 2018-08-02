@@ -1,5 +1,4 @@
-pipeline {
-   agent any
+
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
@@ -24,5 +23,4 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
-}
 }
