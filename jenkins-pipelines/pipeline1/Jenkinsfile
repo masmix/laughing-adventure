@@ -1,10 +1,12 @@
 node {
     def mvnHome
     stage('Preparation') { // for display purposes
-        // Get some code from a GitHub repository
         //git 'https://github.com/jglick/simple-maven-project-with-tests.git'
         //git 'git@172.17.0.4:/git-server/repos/myrepo.git'
-        //dir('complete') {
+        //dir('complete')
+        // {
+
+
         checkout([$class: 'GitSCM',
                   branches: [[name: '*/master']],
                   doGenerateSubmoduleConfigurations: false,
