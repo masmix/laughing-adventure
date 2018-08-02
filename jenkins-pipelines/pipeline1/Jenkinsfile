@@ -3,7 +3,7 @@ node {
     stage('Preparation') { // for display purposes
         // Get some code from a GitHub repository
         //git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-        git 'ssh://git@172.17.0.4:/git-server/repos/myrepo.git'
+        git 'git@172.17.0.4:/git-server/repos/myrepo.git'
         // Get the Maven tool.
         // ** NOTE: This 'M3' Maven tool must be configured
         // **       in the global configuration.
