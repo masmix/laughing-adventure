@@ -1,9 +1,13 @@
+pipeline {
+   agent any
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-      // Get the Maven tool.
+      //git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      git 'ssh://git@172.17.0.4:/git-server/repos/myrepo.git'
+
+  // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
       mvnHome = tool 'maven1'
@@ -20,4 +24,5 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
+}
 }
