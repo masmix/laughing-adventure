@@ -81,7 +81,10 @@ services:
     environment:
       - HUB_HOST=selenium_hub
       - HUB_PORT=4444
-    selenium_node_chrome
+    networks:
+             jenkins-net:
+               aliases:
+                - selenium_node_chrome
   master:
     build: ./jenkins-master
     ports:
