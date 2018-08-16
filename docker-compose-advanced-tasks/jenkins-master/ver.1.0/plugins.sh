@@ -20,13 +20,10 @@ then
 USAGE:
   Parse a support-core plugin -style txt file as specification for jenkins plugins to be installed
   in the reference directory, so user can define a derived Docker image with just :
-
   FROM jenkins
   COPY plugins.txt /plugins.txt
   RUN /usr/local/bin/plugins.sh /plugins.txt
-
   Note: Plugins already installed are skipped
-
 "
     exit 1
 else
@@ -48,7 +45,7 @@ else
     exit 1
 fi
 
-JENKINS_PLUGINS_DIR=${JENKINS_HOME}/plugins
+JENKINS_PLUGINS_DIR=/var/jenkins_home/plugins
 if [ -d "$JENKINS_PLUGINS_DIR" ]
 then
     echo "Analyzing: $JENKINS_PLUGINS_DIR"
@@ -110,7 +107,7 @@ if (( "$COUNT_PLUGINS_INSTALLED" > 0 ))
 then
     echo "INFO: Successfully installed $COUNT_PLUGINS_INSTALLED plugins."
 
-    if [ -d "$JENKINS_PLUGINS_DIR" ]
+    if [ -d $JENKINS_PLUGINS_DIR ]
     then
         echo "INFO: Please restart the container for changes to take effect!"
     fi
