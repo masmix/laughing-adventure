@@ -13,7 +13,7 @@ node {
                   extensions: [[$class: 'RelativeTargetDirectory',
                                 relativeTargetDir: '']],
                   submoduleCfg: [],
-                  userRemoteConfigs: [[url: 'git@git-server/git-server/repos/myrepo.git']]])
+                  userRemoteConfigs: [[url: 'ssh://git@git-server/git-server/repos/myrepo.git']]])
         //}
 
         // Get the Maven tool.
