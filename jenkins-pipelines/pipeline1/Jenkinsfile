@@ -29,15 +29,15 @@ node {
          //   matcher ? matcher[0][1] : null
         //}
 
-        def matcher = readFile('complete/pom.xml') =~ '<version>(.+)</version>'
-        if (matcher) {
-            echo "Building version ${matcher[0][1]}"
-        }
-        matcher=null
+        //def matcher = readFile('complete/pom.xml') =~ '<version>(.+)</version>'
+        //if (matcher) {
+          //  echo "Building version ${matcher[0][1]}"
+        //}
+        //matcher=null
         mvnHome = tool 'maven1'
-        sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify -f complete"
-        step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
-        step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+        //sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify -f complete"
+        //step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+        //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
 
     stage('SonarQube analysis') {
