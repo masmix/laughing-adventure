@@ -24,7 +24,7 @@ node {
     }
 
     stage('SonarQube analysis') {
-	ws('complete/sonar.properties') {
+	ws('sonar-project.properties') {
         // requires SonarQube Scanner 2.8+
         def scannerHome = tool 'sonar1';
         withSonarQubeEnv('sonar1') {
