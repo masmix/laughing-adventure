@@ -46,4 +46,8 @@ node {
         junit '**/target/surefire-reports/TEST-*.xml'
         archive 'target/*.jar'
     }
+
+    stage('Publish') {
+        nexusPublisher nexusInstanceId: 'nexus3-1', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'complete/complete/target/gs-spring-boot-0.1.0.jar']], mavenCoordinate: [artifactId: 'gs-spring-boot', groupId: 'org.springframework', packaging: 'jar', version: '0.1.0']]]
+    }
 }
