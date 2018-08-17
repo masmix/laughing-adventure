@@ -29,8 +29,7 @@ node {
         def scannerHome = tool 'sonar1';
         echo scannerHome;
         withSonarQubeEnv('sonar1') {
-            sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=my:project_2017a -Dsonar.projectName=My project_2017a
- -Dsonar.projectVersion=1.0 -Dsonar.sources=. "
+            sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=my:project_2017a -Dsonar.projectName=My project_2017a -Dsonar.projectVersion=1.0 -Dsonar.sources=."
         }
     }
 }
