@@ -35,7 +35,7 @@ node {
         }
         matcher=null
         mvnHome = tool 'maven1'
-        sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify"
+        sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify -f complete"
         step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
         step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
