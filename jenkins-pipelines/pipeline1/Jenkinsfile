@@ -1,3 +1,4 @@
+package pipeline1
 node {
     def mvnHome
     stage('Preparation') { // for display purposes
@@ -26,8 +27,8 @@ node {
     stage('SonarQube analysis') {
  // ('workspace/pipeline2/sonar-project.properties') //
        // requires SonarQube Scanner 2.8+
-        def scannerHome = tool 'sonar1';
-        echo scannerHome;
+        def scannerHome = tool 'sonar1'
+        echo scannerHome
         withSonarQubeEnv('sonar1') {
             sh "${scannerHome}/bin/sonar-scanner"
         }
@@ -48,6 +49,6 @@ node {
     }
 
     stage('Publish') {
-        nexusPublisher nexusInstanceId: 'nexus3-1', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'complete/complete/target/gs-spring-boot-0.1.0.jar']], mavenCoordinate: [artifactId: 'gs-spring-boot', groupId: 'org.springframework', packaging: 'jar', version: '0.1.0']]]
+        nexusPublisher nexusInstanceId: 'nexus3-1', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'complete/target/gs-spring-boot-0.1.0.jar']], mavenCoordinate: [artifactId: 'gs-spring-boot', groupId: 'org.springframework', packaging: 'jar', version: '0.1.0']]]
     }
 }
