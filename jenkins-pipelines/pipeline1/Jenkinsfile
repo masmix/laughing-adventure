@@ -29,7 +29,7 @@ node {
          //   matcher ? matcher[0][1] : null
         //}
 
-        def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+        def matcher = readFile('complete/pom.xml') =~ '<version>(.+)</version>'
         if (matcher) {
             echo "Building version ${matcher[0][1]}"
         }
