@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: felfert
+Build-Jdk: 1.8.0_121
+Extension-Name: jclouds-jenkins
+Specification-Title: Allows Jenkins to build using Cloud Servers via J
+ Clouds
+Implementation-Title: jclouds-jenkins
+Implementation-Version: 2.14
+Group-Id: org.jenkins-ci.plugins
+Short-Name: jclouds-jenkins
+Long-Name: Jenkins JClouds plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/JClouds+Plugin
+Compatible-Since-Version: 2.9
+Plugin-Version: 2.14
+Hudson-Version: 2.19.3
+Jenkins-Version: 2.19.3
+Mask-Classes: com.google.common
+PluginFirstClassLoader: true
+Plugin-Dependencies: bouncycastle-api:2.16.0,config-file-provider:2.15
+ .6,credentials:2.1.10,ssh-credentials:1.12,ssh-slaves:1.12
+Plugin-Developers: Fritz Elfert:felfert:fritz-github@fritz-elfert.de,M
+ onty Taylor:sdirector:mordred@inaugust.com,Adrian Cole:jclouds:adrian
+ @jclouds.org,Vijay Kiran:vijaykiran:mail@vijaykiran.com,Andrew Bayer:
+ abayer:andrew.bayer@gmail.com,Marat Mavlyutov:mavlyutov:m.mavlyutov@g
+ mail.com
+

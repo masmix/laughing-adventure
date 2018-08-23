@@ -1,0 +1,7 @@
+Started by user unknown or anonymous
+Building remotely on [8mha:////4EI8HGj29hxGMhcMN8srzw2phirICrutkcgl9Y8N7HObAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy1EgZZ/eT83ILSktQi/ZT85OzUIl0TY9PUVNMUC3ODZGMADLr6h9IAAAA=[0mdocker-435ee5d870c3 on LocalDockerHost (testslave) in workspace /home/jenkins/workspace/testjob
+[testjob] $ /bin/sh -xe /tmp/jenkins3136009262093668749.sh
++ echo 'Hello World! This is baby?s first ephemeral build node!'
+Hello World! This is baby?s first ephemeral build node!
++ sleep 1
+Finished: SUCCESS
