@@ -6,6 +6,17 @@
 :project_id: gs-spring-boot
 = DevOps training project
 
+== What is this 
+This is project for building an aplications (i.e gs-spring-boot) using.
+
+== Technologies
+
+* Docker 
+* Virtualbox
+* Linux Centos7
+* Linux Ubuntu
+* Jenkins 
+
 This guide provides a sampling of how {spring-boot}[Spring Boot] helps you accelerate and facilitate application development. As you read more Spring Getting Started guides, you will see more use cases for Spring Boot.
 It is meant to give you a quick taste of Spring Boot. If you want to create your own Spring Boot-based project, visit
 http://start.spring.io/[Spring Initializr], fill in your project details, pick your options, and you can download either
