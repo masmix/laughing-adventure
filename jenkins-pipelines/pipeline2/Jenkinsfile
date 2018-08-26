@@ -1,0 +1,13 @@
+node ('testslave') {
+    stage "Create build output" 
+        // Make the output directory.
+        sh "hostname"
+    
+}
+node ('testslave2') {
+    stage "Create build output" 
+        // Make the output directory.
+        sh "hostname"
+    
+}
+
