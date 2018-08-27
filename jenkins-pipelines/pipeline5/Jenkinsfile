@@ -37,7 +37,7 @@ node('testslave2')  {
 
 
 node('testslave3')  {
-    stage "Create build output Jenkins Slave 2"
+    stage "Create build output Jenkins Slave 3"
 
     // Make the output directory.
     sh "mkdir -p output"
