@@ -104,9 +104,9 @@ services:
     build: ./jenkins-slave
     networks:
       - jenkins-net
-    deploy:
-        mode: replicated
-        replicas: 2
+    #deploy:
+    #    mode: replicated
+    #    replicas: 2
   proxy:
     build: ./docker-proxy
     volumes:

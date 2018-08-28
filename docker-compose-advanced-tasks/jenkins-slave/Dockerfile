@@ -10,6 +10,7 @@ RUN yum install -y git && \
     yum install -y wget && \
 	yum install -y java-1.8.0-openjdk && \
 	yum install -y sudo && \
+	yum install -y python-docker-py  && \
 	yum clean all
 
 ARG user=jenkins
