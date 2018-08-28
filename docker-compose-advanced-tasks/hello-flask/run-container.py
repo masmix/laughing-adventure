@@ -5,6 +5,8 @@
 import docker
 client = docker.from_env()
 print dir(client)
+for image in client.images.list():
+  print image.id
 #container = client.containers.get('f1064a8a4c82')
 #print container.logs()
 
