@@ -1,13 +1,3 @@
-#import docker
-#client = docker.from_env()
-#container = client.containers.run("bfirsh/reticulate-splines", detach=True)
-#print container.id
-import docker
-client = docker.from_env()
-print dir(client.images)
-#for image in dir(client.images):
-#  print image.id
-#container = client.containers.get('f1064a8a4c82')
-#print container.logs()
-
-
+from docker import Client
+cli = Client(base_url='http://172.20.0.2:2375')
+cli.containers()
