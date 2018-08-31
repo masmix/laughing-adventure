@@ -1,3 +1,3 @@
 from docker import Client
-cli = Client(base_url='http://172.20.0.2:2375')
-cli.containers()
+cli = Client(base_url='http://localhost:2375')
+print cli.containers()
