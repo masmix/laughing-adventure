@@ -14,7 +14,7 @@ pipeline {
             parallel {
                 stage('Branch A') {
                     agent {
-                        label "for-branch-a"
+                        label "testslave"
                     }
                     steps {
                         echo "On Branch A"
@@ -49,4 +49,3 @@ pipeline {
         }
     }
 }
-Steps
