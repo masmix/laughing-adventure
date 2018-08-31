@@ -1,58 +1,18 @@
-// This shows a simple example of how to archive the build output artifacts.
-node('testslave')  {
-    stage "Create build output Slave 1"
+try {node("master") {sh "hostname" 
 
-    // Make the output directory.
-    sh "mkdir -p output"
+parrallel ( 
 
-    // Write an useful file, which is needed to be archived.
-    writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
+	node("testslave"){ sh "hostname"
+				}
+	node("testslave2"){sh "hostname"
+				}
+	node("testslave3"){sh "hostame"
+				}
 
-    // Write an useless file, which is not needed to be archived.
-    writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
 
-    stage "Archive build output"
+	)
 
-    // Archive the build output artifacts.
-    archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
 }
 
-node('testslave2')  {
-    stage "Create build output Jenkins Slave 2"
-    
-    // Make the output directory.
-    sh "mkdir -p output"
-
-    // Write an useful file, which is needed to be archived.
-    writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
-
-    // Write an useless file, which is not needed to be archived.
-    writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
-
-    stage "Archive build output"
-    
-    // Archive the build output artifacts.
-    archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
-}
-
-
-node('testslave3')  {
-    stage "Create build output Jenkins Slave 3"
-
-    // Make the output directory.
-    sh "mkdir -p output"
-
-    // Write an useful file, which is needed to be archived.
-    writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
-
-    // Write an useless file, which is not needed to be archived.
-    writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
-
-    stage "Archive build output"
-
-    // Archive the build output artifacts.
-    archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
-}
-
-
+ }
 
