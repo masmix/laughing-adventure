@@ -14,7 +14,7 @@ pipeline {
             parallel {
                 stage('Branch A') {
                     agent {
-                        label "testslave"
+                        label "master"
                     }
                     steps {
                         echo "On Branch A"
