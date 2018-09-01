@@ -54,6 +54,13 @@ services:
   #  restart: always
   #  container_name: selenium_hub
   #  networks:
+  #       q
+  #       w
+  #       p
+  #       q
+  #       w
+  #       p
+  #       q
   #       jenkins-net:
   #         aliases:
   #          - selenium_hub
@@ -104,16 +111,10 @@ services:
     build: ./jenkins-slave
     networks:
       - jenkins-net
-<<<<<<< HEAD
-    #deploy:
-    #    mode: replicated
-    #    replicas: 2
-=======
   slave2:
     build: ./jenkins-slave2
     networks:
       - jenkins-net    
->>>>>>> branch2
   proxy:
     build: ./docker-proxy
     volumes:
