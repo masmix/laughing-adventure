@@ -9,11 +9,12 @@ pipeline {
   stage('Deploy') {
    parallel {
     stage('Dev') {
-     when {
-      branch 'master'
-     }
-     steps {
-      echo 'hello master'
+      steps {
+      node('testslave') {
+		sh "echo testslave"}
+      node('testslave2'){
+		sh "echo testslave2" }
+		
      }
     }
     stage('QA') {
