@@ -3,7 +3,10 @@ pipeline {
  stages {
   stage('Run Tests') {
    steps {
-    sh "echo stage Run Test"
+   node('testslave') {
+          sh "hostname"}
+      node('testslave2'){
+          sh "hostname" }
    }
   }
   stage('Deploy') {
@@ -11,15 +14,18 @@ pipeline {
     stage('Dev') {
       steps {
       node('testslave') {
-		sh "echo testslave"}
+		sh "hostname"}
       node('testslave2'){
-		sh "echo testslave2" }
-		
-     }
+		sh "hostname" }
+		 }
     }
     stage('QA') {
-     steps {
-      echo 'hello stable'
+      steps {
+      node('testslave') {
+                sh "hostname"}
+      node('testslave2'){
+                sh "hostname" }
+      
      }
     }
    }
