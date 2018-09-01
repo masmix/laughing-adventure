@@ -5,7 +5,8 @@ pipeline {
    steps {
    git url: 'https://github.com/masmix/laughing-adventure.git'
    node('testslave') {
-          sh "hostname"
+        git url: 'https://github.com/masmix/laughing-adventure.git'
+        sh "hostname"
 	sh "ls -la"
 	sh "pwd"
 //	sh "python docker-api-training/hello-flask/run-container.py"		
