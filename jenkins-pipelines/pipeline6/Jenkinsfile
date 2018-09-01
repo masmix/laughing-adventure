@@ -9,7 +9,7 @@ pipeline {
         sh "hostname"
 	sh "ls -la"
 	sh "pwd"
-//	sh "python docker-api-training/hello-flask/run-container.py"		
+	sh "python docker-api-training/hello-flask/run-container.py"		
 }
       node('testslave2'){
           sh "hostname" }
