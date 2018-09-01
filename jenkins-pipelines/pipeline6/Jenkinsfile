@@ -5,7 +5,7 @@ pipeline {
    steps {
    node('testslave') {
           sh "hostname"
-		sh "python --version"		
+		sh "python docker-api-training/hello-flask/run-container.py"		
 }
       node('testslave2'){
           sh "hostname" }
