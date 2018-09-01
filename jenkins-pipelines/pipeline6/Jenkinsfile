@@ -4,7 +4,9 @@ pipeline {
   stage('Run Tests') {
    steps {
    node('testslave') {
-          sh "hostname"}
+          sh "hostname"
+		sh "python --version"		
+}
       node('testslave2'){
           sh "hostname" }
    }
