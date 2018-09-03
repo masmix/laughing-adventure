@@ -7,12 +7,10 @@ node {
 		stage('SCM checkout testslave'){
             checkout scm }
             try {
-	
 		stage('Build testslave'){     
 	           sh 'hostname'
-          		
 	    catch (Exception exc) {
-            	echo 'Something failed in testslave!'
+           	echo 'Something failed in testslave!'
 		}	
             finally {
                 sh 'whoami'
@@ -35,8 +33,6 @@ node {
 }
         }
     }
-  
-		
         }
         catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
