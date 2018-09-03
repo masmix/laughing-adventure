@@ -19,10 +19,10 @@ if inspect_romantic_feynman == 'running':
 else:
         print('Container is stopped. Sorry, but nothing to to! ') 
 
-print('Sleep to 3 seconds, before check container status ! ')
-time.sleep(3)
+#print('Sleep to 3 seconds, before check container status ! ')
+#time.sleep(3)
+
+inspect_romantic_feynman = client.inspect_container('romantic_feynman')['State']['Status']
 
 print 'Container romantic_feynman now have a status: ' + inspect_romantic_feynman
-
-
 
