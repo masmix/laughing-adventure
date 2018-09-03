@@ -1,7 +1,24 @@
 node {
     stage('Build') {
-        try { 
-            
+        try { {
+    parallel testslave: {
+        node('testslave') {
+            checkout scm
+            try {
+                unstash 'app'
+                sh 'make check'
+            }
+            finally {
+                junit '**/target/*.xml'
+            }
+        }
+    },
+    testslave2: {
+        node('testslave2') {
+            /* .. snip .. */
+        }
+    }
+     
 		sh 'exit 1'
         }
         catch (exc) {
