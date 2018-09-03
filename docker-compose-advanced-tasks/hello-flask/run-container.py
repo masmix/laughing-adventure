@@ -23,6 +23,6 @@ print '...'
 romantic_feynman_status = client.inspect_container('romantic_feynman')
 print romantic_feynman_status 
 
-list_of_containers = client.list(all)
+list_of_containers = client.containers()
 print list_of_containers
 	
