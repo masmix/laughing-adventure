@@ -17,11 +17,19 @@ node {
     },
     testslave2: {
         node('testslave2') {
-            /* .. snip .. */
+            checkout scm
+            try {
+                unstash 'app'
+                sh 'make check'
+            }
+            finally {
+                junit '**/target/*.xml'
+            }
+
         }
     }
      
-		sh 'exit 1'
+		sh 'exit 0'
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
