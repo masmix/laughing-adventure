@@ -18,6 +18,6 @@ else:
         print('Tring to container startup') 
 	client.start('romantic_feynman')
 
-print 'Container romantic_feynman have now status:' + is_romantic_feynman
-print '...'
+is_romantic_feynman = client.inspect_container('romantic_feynman')['State']['Status']
 
+print 'Container romantic_feynman have now status:' + is_romantic_feynman
