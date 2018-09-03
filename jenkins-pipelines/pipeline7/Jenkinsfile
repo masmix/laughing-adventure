@@ -2,12 +2,11 @@ try {
 node {
     stage('Build') {
         try { 
-    parallel testslave {
+    parallel testslave: {
         node('testslave') {
-		stage('SCM checkout testslave'){
-            checkout scm }
+		checkout scm 
             try {
-		stage('Build testslave'){     
+		     
 	           sh 'hostname'
 	    catch (Exception exc) {
            	echo 'Something failed in testslave!'
@@ -18,7 +17,7 @@ node {
         	}
 
 }
-} 
+ 
     			},
     testslave2 {
         node('testslave2') {
