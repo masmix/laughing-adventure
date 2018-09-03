@@ -11,7 +11,10 @@ try {
     (currentBuild.result != "ABORTED") && node("master") {
         // Send e-mail notifications for failed or unstable builds.
         // currentBuild.result must be non-null for this step to work.
-        step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])]) }
+        step(){
+		sh "echo 'echo Sending e-mail'"
+		}
+ }
     if (err) {
         throw err
     }
