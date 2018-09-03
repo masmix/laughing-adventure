@@ -1,6 +1,6 @@
 node {
     stage('Build') {
-        try { {
+        try { 
     parallel testslave: {
         node('testslave') {
             checkout scm
