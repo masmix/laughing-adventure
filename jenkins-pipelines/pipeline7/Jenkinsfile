@@ -1,20 +1,43 @@
 def err = null
 try {
+ agent any
+ stages {
+  stage('Run Tests') {
+   steps {
+   git url: 'https://github.com/masmix/laughing-adventure.git'
+   node('testslave') {
+        git url: 'https://github.com/masmix/laughing-adventure.git'
+        sh "hostname"
+        sh "ls -la"
+        sh "pwd"
+        //sh "python docker-api-training/hello-flask/run-container.py"
+}
+      node('testslave2'){
+          sh "hostname" }
+   }
+  }
+  stage('Deploy') {
+   parallel {
+    stage('Dev') {
+      steps {
+      node('testslave') {
+                sh "hostname"}
+      node('testslave2'){
+                sh "hostname" }
+                 }
+    }
+    stage('QA') {
+      steps {
+      node('testslave') {
+                sh "hostname"}
+      node('testslave2'){
+                sh "hostname" }
 
-node("master") { sh "hostname"
-
-parrallel ( 
-
-	node("testslave"){
-		sh "hostname"
-				}
-	node("testslave2"){
-		sh "hostname"
-				}
-	node("testslave3"){
-		sh "hostname"
-				}
-	)
+     }
+    }
+   }
+  }
+ }
 }
 
 
