@@ -49,7 +49,7 @@ try {
         //step(){
 	//	sh "echo 'echo Sending e-mail'"
 	//	}
-     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])])
+    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'wojciech.kaczmarczyk@capgemini.com', sendToIndividuals: true])
  }
     if (err) {
         throw err
