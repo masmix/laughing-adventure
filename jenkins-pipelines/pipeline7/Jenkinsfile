@@ -1,7 +1,7 @@
 def err = null
 try {
 
-node("master") {sh "hostname"
+node("master") { sh "hostname"
 
 parrallel ( 
 
@@ -17,10 +17,8 @@ parrallel (
 	)
 }
 
-node('testslave') {
-        // Main pipeline code goes here
-	sh "hostname" 
-    }
+
+
 } catch (caughtError) { //End of Try
     err = caughtError
     currentBuild.result = "FAILURE"
