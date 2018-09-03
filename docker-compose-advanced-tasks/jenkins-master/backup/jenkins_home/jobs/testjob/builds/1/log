@@ -1,9 +1,0 @@
-Started by user unknown or anonymous
-Building remotely on [8mha:////4OdPJhfFc/2Zhm8nQbJkJi19v1N/hOUhiXRtR8HJyCOzAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy1EgZZ/eT83ILSktQi/ZT85OzUIl1jg0QjS9PE5DST1EQAquFMdtIAAAA=[0mdocker-30a295acf4ea on LocalDockerHost (testslave) in workspace /home/jenkins/workspace/testjob
-[testjob] $ /bin/sh -xe /tmp/jenkins1519985340755796017.sh
-+ echo 'Hello World! This is baby?s first ephemeral build node!'
-Hello World! This is baby?s first ephemeral build node!
-+ Sleep 1
-/tmp/jenkins1519985340755796017.sh: line 2: Sleep: command not found
-Build step 'Execute shell' marked build as failure
-Finished: FAILURE
