@@ -22,7 +22,8 @@ node {
     },
     testslave2: {
         node('testslave2') {
-            checkout scm
+		stage('SCM checkout'){
+            checkout scm }
             try {
                 sh 'hostname'
                 }
