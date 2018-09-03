@@ -13,5 +13,6 @@ print is_romantic_feynman
 
 if is_romantic_feynman == 'running':
 	print 'Container romantic_feynman is running'
-
+else:
+        print('Wear long pants.')
 
