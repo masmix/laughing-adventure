@@ -12,7 +12,7 @@ inspect_romantic_feynman = client.inspect_container('romantic_feynman')['State']
 
 print is_romantic_feynman
 
-if is_romantic_feynman == 'running':
+if nspect_romantic_feynman == 'running':
 	print 'Container romantic_feynman is running! Trying to stop ...'
 	client.stop('romantic_feynman')
 else:
