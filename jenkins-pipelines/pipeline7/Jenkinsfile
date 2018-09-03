@@ -1,46 +1,45 @@
 try {
+
 node {
     stage('Build') {
         try { 
     parallel testslave: {
         node('testslave') {
-		checkout scm 
+		stage('SCM checkout'){
+            checkout scm }
             try {
-		     
-	           sh 'hostname'
+		stage('SCM checkout'){
+                sh 'hostname'
+            }
+		}
 	    catch (Exception exc) {
-           	echo 'Something failed in testslave!'
+            	echo 'Something failed in testslave!'
 		}	
             finally {
                 sh 'whoami'
-            		}
-        	}
-
-}
- 
-    			},
-    testslave2 {
+            	}
+        }
+    },
+    testslave2: {
         node('testslave2') {
-		stage('SCM checkout testslave2'){
-            checkout scm }
+            checkout scm
             try {
-		stage('Build testslave2'){
                 sh 'hostname'
-                
+                }
             finally {
                 sh 'whoami'
             }
-}
+
         }
     }
+  
+		
         }
         catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
 		            
         }
     }
-}
-}
 }
 } catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
