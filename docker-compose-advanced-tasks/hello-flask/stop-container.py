@@ -1,4 +1,5 @@
-import docker 
+import docker
+import time 
 #print dir(docker.client)
 client = docker.APIClient(base_url='tcp://192.168.56.101:2375')
 #print client.version()
@@ -17,6 +18,9 @@ if inspect_romantic_feynman == 'running':
 	client.stop('romantic_feynman')
 else:
         print('Container is stopped. Sorry, but nothing to to! ') 
+
+print('Sleep to 3 seconds, before check container status ! ')
+time.sleep(3)
 
 print 'Container romantic_feynman now have a status: ' + inspect_romantic_feynman
 
