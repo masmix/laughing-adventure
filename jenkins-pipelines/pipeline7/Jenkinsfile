@@ -20,6 +20,7 @@ node {
             		}
         	}
 }
+} 
     			},
     testslave2: {
         node('testslave2') {
