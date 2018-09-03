@@ -14,7 +14,7 @@ try {
         //step(){
 	//	sh "echo 'echo Sending e-mail'"
 	//	}
-     step([$class: 'CopyArtifact', filter: '*.war', fingerprintArtifacts: true, projectName: 'war', selector: [$class: 'StatusBuildSelector', stable: false]])
+     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])])
  }
     if (err) {
         throw err
