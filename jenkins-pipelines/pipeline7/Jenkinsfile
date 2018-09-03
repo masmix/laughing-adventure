@@ -31,11 +31,13 @@ node {
      
 		sh 'exit 0'
         }
-        catch (exc) {
+        catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
-		throw            
+		            
         }
     }
 }
+} catch (Exception exc) {
+            echo 'Something failed, I should sound the klaxons!'
 
-} finally { echo 'last finaly statement' }
+} finally { echo 'last finaly statement'}
