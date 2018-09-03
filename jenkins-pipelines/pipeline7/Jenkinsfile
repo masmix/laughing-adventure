@@ -7,11 +7,10 @@ node {
         node('testslave') {
             checkout scm
             try {
-                unstash 'app'
-                sh 'make check'
+                sh 'hostname'
             }
             finally {
-                junit '**/target/*.xml'
+                sh 'whoami'
             }
         }
     },
@@ -19,11 +18,10 @@ node {
         node('testslave2') {
             checkout scm
             try {
-                unstash 'app'
-                sh 'make check'
-            }
+                sh 'hostname'
+                }
             finally {
-                junit '**/target/*.xml'
+                sh 'whoami'
             }
 
         }
