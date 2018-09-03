@@ -16,4 +16,7 @@ if is_romantic_feynman == 'running':
 else:
         print('Tring to container startup') 
 	client.start('romantic_feynman')
+
+romantic_feynman_status = client.inspect_container('romantic_feynman')
+print romantic_feynman_status 
 	
