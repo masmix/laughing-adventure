@@ -1,5 +1,5 @@
 import docker 
-print dir(docker)
+print dir(docker.client)
 #li = Client(base_url='http://localhost:2375')
 #cli = docker.from_env(base_url='http://192.168.56.101:2375')
 
