@@ -33,8 +33,9 @@ node {
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
-            
+		throw            
         }
     }
 }
+
 } finally { echo 'last finaly statement' }
