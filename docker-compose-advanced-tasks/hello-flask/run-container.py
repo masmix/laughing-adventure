@@ -17,6 +17,9 @@ else:
         print('Tring to container startup') 
 	client.start('romantic_feynman')
 
+print 'Container status info below :'
+print '...'
+
 romantic_feynman_status = client.inspect_container('romantic_feynman')
 print romantic_feynman_status 
 	
