@@ -7,8 +7,11 @@ node {
         node('testslave') {
             checkout scm
             try {
-                sh 'hostname'
+                sh 'fsdfdsfsdfdsfds'
             }
+	    catch (Exception exc) {
+            	echo 'Something failed in testslave!'
+	
             finally {
                 sh 'whoami'
             }
