@@ -38,9 +38,6 @@ try {
    }
   }
  }
-}
-
-
 
 } catch (caughtError) { //End of Try
     err = caughtError
