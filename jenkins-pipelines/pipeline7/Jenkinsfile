@@ -5,10 +5,13 @@ node {
         try { 
     parallel testslave: {
         node('testslave') {
-            checkout scm
+		stage('SCM checkout'){
+            checkout scm }
             try {
+		stage('SCM checkout'){
                 sh 'hostname'
             }
+		}
 	    catch (Exception exc) {
             	echo 'Something failed in testslave!'
 		}	
