@@ -11,10 +11,10 @@ node {
             }
 	    catch (Exception exc) {
             	echo 'Something failed in testslave!'
-	
+		}	
             finally {
                 sh 'whoami'
-            }
+            	}
         }
     },
     testslave2: {
