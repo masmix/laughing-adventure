@@ -8,7 +8,7 @@ node {
 		stage('SCM checkout'){
             checkout scm }
             try {
-		stage('SCM checkout'){
+		stage('Build hostname testslave'){
                 sh 'hostname'
             }
 		}
