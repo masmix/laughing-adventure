@@ -1,7 +1,8 @@
 def err = null
 try {
-    node {
+    node('testslave') {
         // Main pipeline code goes here
+	sh "hostname" 
     }
 } catch (caughtError) { //End of Try
     err = caughtError
