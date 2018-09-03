@@ -2,7 +2,7 @@ try {
 node {
     stage('Build') {
         try { 
-    parallel testslave: {
+    parallel testslave {
         node('testslave') {
 		stage('SCM checkout testslave'){
             checkout scm }
@@ -19,8 +19,8 @@ node {
 
 }
 } 
-    			}
-    testslave2: {
+    			},
+    testslave2 {
         node('testslave2') {
 		stage('SCM checkout testslave2'){
             checkout scm }
