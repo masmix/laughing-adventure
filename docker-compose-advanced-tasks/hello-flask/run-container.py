@@ -1,5 +1,8 @@
 import docker 
 print dir(docker.client)
+client = docker.APIClient(base_url='tcp://192.168.56.101:2375')
+print client.version()
+
 #li = Client(base_url='http://localhost:2375')
 #cli = docker.from_env(base_url='http://192.168.56.101:2375')
 
