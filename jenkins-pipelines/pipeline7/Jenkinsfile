@@ -17,8 +17,9 @@ node {
             		}
         	}
 
+}
 } 
-    			},
+    			}
     testslave2: {
         node('testslave2') {
 		stage('SCM checkout testslave2'){
