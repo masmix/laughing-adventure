@@ -15,5 +15,5 @@ if is_romantic_feynman == 'running':
 	print 'Container romantic_feynman is running'
 else:
         print('Tring to container startup') 
-	client.containers.run('romantic_feynman')
+	client.containers.start('romantic_feynman')
 	
