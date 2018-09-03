@@ -5,31 +5,33 @@ node {
         try { 
     parallel testslave: {
         node('testslave') {
-		stage('SCM checkout'){
+		stage('SCM checkout testslave'){
             checkout scm }
             try {
-		stage('SCM checkout'){
-                sh 'hostname'
-            }
-		}
+	
+		stage('Build testslave'){     
+	           sh 'hostname'
+          		
 	    catch (Exception exc) {
             	echo 'Something failed in testslave!'
 		}	
             finally {
                 sh 'whoami'
-            	}
-        }
-    },
+            		}
+        	}
+    			},
     testslave2: {
         node('testslave2') {
-            checkout scm
+		stage('SCM checkout testslave2'){
+            checkout scm }
             try {
+		stage('Build testslave2'){
                 sh 'hostname'
-                }
+                
             finally {
                 sh 'whoami'
             }
-
+}
         }
     }
   
