@@ -1,3 +1,5 @@
+try {
+
 node {
     stage('Build') {
         try { 
@@ -27,3 +29,4 @@ node {
         }
     }
 }
+} finally { echo 'last finaly statement' }
