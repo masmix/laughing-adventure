@@ -1,5 +1,4 @@
 try {
-
 node {
     stage('Build') {
         try { 
@@ -44,6 +43,7 @@ node {
 		            
         }
     }
+}
 }
 } catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
