@@ -2,8 +2,7 @@ def err = null
 try {  
    node('master'){ sh "hostname"
 
-parrallel ( 
-
+parrallel testslave: { 
 	node("testslave"){
 		sh "hostname"
 				}
@@ -12,8 +11,7 @@ parrallel (
 	node("testslave3"){
 				}
 
-
-	)
+	}
 
 }  
   
