@@ -1,41 +1,11 @@
-def err = null
-try {  
-   node('master'){ sh "hostname"
-
-parrallel testslave: { 
-	node("testslave"){
-		sh "hostname"
-				}
-	node("testslave2"){
-				}
-	node("testslave3"){
-				}
-
-	}
-
-}  
-  
- 
-
-} catch (caughtError) { //End of Try
-    err = caughtError
-    currentBuild.result = "FAILURE"
-} finally {
-    (currentBuild.result != "ABORTED") && node("master") {
-        // Send e-mail notifications for failed or unstable builds.
-        // currentBuild.result must be non-null for this step to work.
-        //step(){
-	//	sh "echo 'echo Sending e-mail'"
-	//	}
-    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'wojciech.kaczmarczyk@capgemini.com', sendToIndividuals: true])
- }
-    if (err) {
-        throw err
+node {
+    stage('Build') {
+        try {
+            sh 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
+        }
     }
 }
-
-
-
-
-
-
