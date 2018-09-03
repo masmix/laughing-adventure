@@ -1,6 +1,23 @@
 def err = null
 try {
-    node('testslave') {
+
+node("master") {sh "hostname"
+
+parrallel ( 
+
+	node("testslave"){
+		sh "hostname"
+				}
+	node("testslave2"){
+		sh "hostname"
+				}
+	node("testslave3"){
+		sh "hostname"
+				}
+	)
+}
+
+node('testslave') {
         // Main pipeline code goes here
 	sh "hostname" 
     }
