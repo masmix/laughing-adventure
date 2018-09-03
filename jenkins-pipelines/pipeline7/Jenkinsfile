@@ -26,8 +26,8 @@ node {
 
         }
     }
-     
-		sh 'exit 0'
+  
+		
         }
         catch (Exception exc) {
             echo 'Something failed, I should sound the klaxons!'
