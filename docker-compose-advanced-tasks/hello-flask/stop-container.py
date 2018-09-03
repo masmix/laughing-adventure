@@ -8,7 +8,8 @@ client = docker.APIClient(base_url='tcp://192.168.56.101:2375')
 
 #print cli.containers()
 #client.inspect_container('romantic_feynman')['State']['Status']
-is_romantic_feynman = client.inspect_container('romantic_feynman')['State']['Status']
+inspect_romantic_feynman = client.inspect_container('romantic_feynman')['State']['Status']
+
 print is_romantic_feynman
 
 if is_romantic_feynman == 'running':
@@ -16,4 +17,8 @@ if is_romantic_feynman == 'running':
 	client.stop('romantic_feynman')
 else:
         print('Container is stopped. Sorry, but nothing to to! ') 
+
+print 'Container romantic_feynman now have a status: ' + inspect_romantic_feynman
+
+
 
