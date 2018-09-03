@@ -11,7 +11,7 @@ client = docker.APIClient(base_url='tcp://192.168.56.101:2375')
 is_romantic_feynman = client.inspect_container('romantic_feynman')['State']['Status']
 print is_romantic_feynman
 
-if is_romantic_feynman = 'running':
+if is_romantic_feynman == 'running':
 	print 'Container romantic_feynman is running'
 
 
