@@ -1,4 +1,5 @@
-import docker 
+import docker
+import pprint 
 #print dir(docker.client)
 client = docker.APIClient(base_url='tcp://192.168.56.101:2375')
 #print client.version()
@@ -22,3 +23,7 @@ print '...'
 
 romantic_feynman_status = client.inspect_container('romantic_feynman')
 print type(romantic_feynman_status)
+
+pprint.pprint(romantic_feynman_status)
+
+
