@@ -19,6 +19,13 @@ services:
     build: ./jenkins-slave
     networks:
       - jenkins-net
+
+
+  slave2:
+    build: ./jenkins-slave2
+    networks:
+      - jenkins-net
+
   proxy:
     build: ./docker-proxy
     volumes:
@@ -27,17 +34,9 @@ services:
      jenkins-net:
        aliases:
         - proxy1
-#    image: ehazlett/docker-proxy:latest
-#    #    command: -i
-#    #    volumes:
-#    #      - /var/run/docker.sock:/var/run/docker.sock
-#    #    networks:
-#    #      jenkins-net:
-#    #        aliases:
-#    #          - proxy1 
 volumes:
  jenkins-data:
  jenkins-log:
 networks:
  jenkins-net:
-#
+

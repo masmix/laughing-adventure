@@ -1,7 +1,7 @@
 build:
 	@docker-compose -p jenkins build
 run:
-	@docker-compose -p jenkins up -d nginx master proxy tomcat git-server nexus sonarqube
+	@docker-compose -p jenkins up -d nginx master proxy
 stop:
 	@docker-compose -p jenkins down
 clean-data: 
