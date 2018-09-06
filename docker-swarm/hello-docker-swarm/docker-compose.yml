@@ -3,7 +3,7 @@ services:
   web:
     #replace username/repo:tag with your name and image details
     #image: masmix/friedlyhello:1.0
-    image: localhost:5000/masmix/friedlyhello:1.0
+    image: 192.168.56.102:5000/masmix/friedlyhello:1.0
     deploy:
       replicas: 5
       resources:
