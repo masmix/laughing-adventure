@@ -3,7 +3,8 @@ services:
   web:
     #replace username/repo:tag with your name and image details
     #image: masmix/friedlyhello:1.0
-    image: centos4.localdomain/masmix/friedlyhello 
+#    image: centos4.localdomain/masmix/friedlyhell
+    image:  192.168.56.102:5000/masmix/friedlyhello
     deploy:
       replicas: 5
       resources:
