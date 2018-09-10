@@ -14,7 +14,7 @@ node {
                   extensions                       : [[$class           : 'RelativeTargetDirectory',
                                                        relativeTargetDir: '']],
                   submoduleCfg                     : [],
-                  userRemoteConfigs                : [[url: 'ssh://git@git-server/git-server/repos/myrepo.git']]])
+                  userRemoteConfigs                : [[url: 'https://github.com/masmix/laughing-adventure.git']]])
         //}
 
         // Get the Maven tool.
