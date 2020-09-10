@@ -68,7 +68,7 @@
     <jenkins.version>2.60.3</jenkins.version>
     <jackson.version>2.8.11</jackson.version>
     <!-- TODO: Unnecessary once we update to 2.9.x -->
-    <jackson-databind.version>2.8.11.1</jackson-databind.version>
+    <jackson-databind.version>2.9.10.5</jackson-databind.version>
   </properties>
 
   <repositories>
