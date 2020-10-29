@@ -4,6 +4,12 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
+                //print pure docker ps
+                                        def DockerPsStdOut = sh (
+                                            script: 'docker ps',
+                                            returnStdout: true
+                                        )
+                                        echo DockerPsStdOut
             }
         }
     }
