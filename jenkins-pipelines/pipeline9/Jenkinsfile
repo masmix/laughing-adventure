@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -11,8 +11,31 @@ pipeline {
                         returnStdout: true
                                         )
                     echo DockerPsStdOut
+
+                    //get paused containers
+                    def PausedContainersList = sh (
+                        script: 'docker ps -qf "status=running" ',
+                        returnStdout: true
+                        ).trim()
+                       
+                    //Print paused containers
+                    PausedContainersList.readLines().each {
+                        println "Container id : ${it}" 
+                        }  
+                    
+                    if (PausedContainersList?.trim()) {
+                        echo "Paused containers exists! Trying autofix this ..."
+                        //stopping and deleting containers    
+                        PausedContainersList.readLines().each {
+                        println "Container id : ${it}"
+                        sh "docker stop ${it} || true && docker rm ${it}"   
+                        }   
+                        env.DOCKER_CONTAINERS_HEALTH = 'unhealthy'
+                    } else {
+                        echo "Paused containers does not exists ..."
+                        env.DOCKER_CONTAINERS_HEALTH = 'healthy'
+                    }     
                 }
-                
             }
         }
     }
