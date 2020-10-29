@@ -14,7 +14,7 @@ RUN apt-get update && \
     stable" && \
     apt-get update && \
     apt-get -y install docker-ce
-RUN usermod -a -G docker jenkins
+
 
 
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
@@ -38,6 +38,9 @@ RUN mkdir -p $JENKINS_HOME \
   && chown ${uid}:${gid} $JENKINS_HOME \
   && groupadd -g ${gid} ${group} \
   && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+
+#add jenkins to docker group
+RUN usermod -a -G docker jenkins
 
 # Jenkins home directory is a volume, so configuration and build history
 # can be persisted and survive image upgrades
